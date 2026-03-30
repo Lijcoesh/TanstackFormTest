@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState, type FormEvent } from "react"
 import "./RegisterForm.css"
 
 interface RegisterFormvalues {
@@ -20,7 +20,9 @@ export default function RegisterForm() {
         nationality: 'Netherlands'
     })
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    ) => {
         const { name, value } = e.target
         setFormData(prev => ({
             ...prev,
@@ -28,8 +30,10 @@ export default function RegisterForm() {
         }))
     }
 
-    const handleSubmit = (values: RegisterFormvalues) => {
-        console.log(values)
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault()
+        console.log(formData)
+        alert(JSON.stringify(formData, null, 2))
     }
 
     return(
@@ -70,12 +74,12 @@ export default function RegisterForm() {
                 </div>
 
                 <div className="form-row">
-                    <label htmlFor="confirm_password">Confirm Password</label>
+                    <label htmlFor="confirmPassword">Confirm Password</label>
                     <input className="form-input" 
                         type="password"
-                        id="confirm_password"
-                        name="confirm_password"
-                        value={formData.confirm_Password}
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        value={formData.confirmPassword}
                         onChange={handleChange}
                     />
                 </div>
