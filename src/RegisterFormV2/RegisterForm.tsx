@@ -20,25 +20,13 @@ export default function RegisterForm() {
             confirmPassword: '',
             age: 0,
             nationality: 'Netherlands'
-        } as RegisterFormvalues
+        } as RegisterFormvalues,
+        onSubmit: (values) => {
+            console.log(values)
+            alert(JSON.stringify(values, null, 2))
+        }
     })
-
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-    ) => {
-        const { name, value } = e.target
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }))
-    }
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
-        console.log(formData)
-        alert(JSON.stringify(formData, null, 2))
-    }
-
+    
     return(
         <div className="register-container">
             <h1 className="register-title">Register</h1>
