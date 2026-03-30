@@ -2,12 +2,12 @@ import { useFieldContext } from "./form-context"
 
 interface IProps {
     label: string
-    description?: string
     id: string
+    type?: string
 }
 
 export default function TextInput(props: IProps) {
-    const { label, id } = props
+    const { label, id, type } = props
 
     const field = useFieldContext<string>()
 
@@ -15,7 +15,7 @@ export default function TextInput(props: IProps) {
         <>
             <label htmlFor={id}>{label}</label>
             <input className="form-input" 
-                type="text"
+                type={type || "text"}
                 id={id}
                 name={id}
                 value={field.state.value}
