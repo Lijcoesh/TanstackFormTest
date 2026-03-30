@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "./RegisterForm.css"
+import "../Styling/RegisterForm.css"
 
 interface RegisterFormvalues {
     username: string
