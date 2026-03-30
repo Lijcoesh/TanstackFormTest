@@ -1,25 +1,10 @@
 import "../Styling/RegisterForm.css"
 import { useForm } from "@tanstack/react-form"
-
-interface RegisterFormvalues {
-    username: string
-    email: string
-    password: string
-    confirmPassword: string
-    age: number
-    nationality: string
-}
+import { registerFormOpts } from "./shared"
 
 export default function RegisterForm() {
     const form = useForm({
-        defaultValues: {
-            username: '',
-            email: '',
-            password: '',
-            confirmPassword: '',
-            age: 0,
-            nationality: 'Netherlands'
-        } as RegisterFormvalues,
+        ...registerFormOpts,
         onSubmit: (values) => {
             console.log(values)
         }
