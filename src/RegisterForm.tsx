@@ -1,4 +1,4 @@
-import React, { useState, type FormEvent } from "react"
+import React, { useState } from "react"
 import "./RegisterForm.css"
 
 interface RegisterFormvalues {
@@ -30,7 +30,7 @@ export default function RegisterForm() {
         }))
     }
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         console.log(formData)
         alert(JSON.stringify(formData, null, 2))
