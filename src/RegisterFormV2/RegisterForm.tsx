@@ -26,11 +26,16 @@ export default function RegisterForm() {
             alert(JSON.stringify(values, null, 2))
         }
     })
-    
+
     return(
         <div className="register-container">
             <h1 className="register-title">Register</h1>
-            <form className="register-form" onSubmit={handleSubmit}>
+            <form className="register-form" 
+                onSubmit={(e) => {
+                    e.preventDefault()
+                    form.handleSubmit()
+                }}
+            >
                 <div className="form-row">
                     <label htmlFor="username">Username</label>
                     <input className="form-input" 
