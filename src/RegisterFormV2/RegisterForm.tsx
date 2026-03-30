@@ -35,7 +35,13 @@ export default function RegisterForm() {
                 }}
             >
                 <div className="form-row">
-                    <form.Field name="username">
+                    <form.Field name="username" validators={{
+                        onChange: ({value}) => {
+                            if(value.trim() === '') {
+                                return 'Username is required'
+                            }
+                        },
+                    }}>
                         {(field) => (
                             <>
                                 <label htmlFor="username">Username</label>
@@ -46,6 +52,9 @@ export default function RegisterForm() {
                                     value={field.state.value}
                                     onChange={(e) => field.handleChange(e.target.value)}
                                 />
+                                {field.state.meta.errors.length > 0 && (
+                                    <em>{field.state.meta.errors.join(', ')}</em>
+                                )}
                             </>
                         )}
                     </form.Field>
