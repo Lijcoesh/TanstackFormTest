@@ -1,9 +1,9 @@
-import RegisterForm from "./RegisterFormV1/RegisterForm";
+import RegisterFormSwitcher from "./RegisterFormSwitcher";
 
 export default function App() {
   return (
     <div className="App">
-      <RegisterForm />
+      <RegisterFormSwitcher />
     </div>
   );
 }
