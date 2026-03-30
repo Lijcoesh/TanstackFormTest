@@ -131,9 +131,9 @@ export default function RegisterForm() {
                         name="nationality">
                         {(field) => {
                             return (
-                                <field.TextInput
+                                <field.DropDown
                                     id="nationality"
-                                    label=" Nationality"
+                                    label="Nationality"
                                 />
                             );
                         }}
