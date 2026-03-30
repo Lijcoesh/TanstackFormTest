@@ -81,6 +81,7 @@ export default function RegisterForm() {
                                 <field.TextInput
                                     id="password"
                                     label="Password"
+                                    type="password"
                                 />
                             );
                         }}
@@ -104,6 +105,7 @@ export default function RegisterForm() {
                                 <field.TextInput
                                     id="confirmPassword"
                                     label="Confirm Password"
+                                    type="password"
                                 />
                             );
                         }}
@@ -123,6 +125,7 @@ export default function RegisterForm() {
                                 <field.TextInput
                                     id="age"
                                     label="Age"
+                                    type="number"
                                 />
                             );
                         }}
