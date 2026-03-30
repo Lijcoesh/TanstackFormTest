@@ -1,9 +1,9 @@
 import "../Styling/RegisterForm.css"
-import { useForm } from "@tanstack/react-form"
 import { registerFormOpts } from "./shared"
+import { useAppForm } from "./form"
 
 export default function RegisterForm() {
-    const form = useForm({
+    const form = useAppForm({
         ...registerFormOpts,
         onSubmit: (values) => {
             console.log(values)
