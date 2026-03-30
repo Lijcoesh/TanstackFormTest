@@ -21,29 +21,26 @@ export default function RegisterForm() {
                 }}
             >
                 <div className="form-row">
-                    <form.Field name="username" validators={{
-                        onChange: ({value}) => {
-                            if(value.trim() === '') {
-                                return 'Username is required'
-                            }
-                        },
-                    }}>
-                        {(field) => (
-                            <>
-                                <label htmlFor="username">Username</label>
-                                <input className="form-input" 
-                                    type="text"
-                                    id="username"
-                                    name="username"
-                                    value={field.state.value}
-                                    onChange={(e) => field.handleChange(e.target.value)}
+                    {/* use form.AppField because it provides the context needed for the text input component */}
+                    <form.AppField
+                        name="username" 
+                        validators={{
+                            onChange: ({value}) => {
+                                if(value.trim() === '') {
+                                    return 'Username is required'
+                                }
+                            },
+                        }}
+                    >
+                        {(field) => {
+                            return (
+                                <field.TextInput 
+                                    id="username" 
+                                    label="Username"
                                 />
-                                {field.state.meta.errors.length > 0 && (
-                                    <em>{field.state.meta.errors.join(', ')}</em>
-                                )}
-                            </>
-                        )}
-                    </form.Field>
+                            );
+                        }}
+                    </form.AppField>
                     <form.Field name="email"
                         validators={{
                             onChange: ({value}) => {
