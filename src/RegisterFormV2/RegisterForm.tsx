@@ -22,7 +22,6 @@ export default function RegisterForm() {
         } as RegisterFormvalues,
         onSubmit: (values) => {
             console.log(values)
-            alert(JSON.stringify(values, null, 2))
         }
     })
 
