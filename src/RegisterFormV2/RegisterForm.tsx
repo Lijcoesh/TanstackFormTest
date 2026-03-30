@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "../Styling/RegisterForm.css"
+import { useForm } from "@tanstack/react-form"
 
 interface RegisterFormvalues {
     username: string
@@ -11,13 +12,15 @@ interface RegisterFormvalues {
 }
 
 export default function RegisterForm() {
-    const [formData, setFormData] = useState<RegisterFormvalues>({
-        username: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        age: 0,
-        nationality: 'Netherlands'
+    const form = useForm({
+        defaultValues: {
+            username: '',
+            email: '',
+            password: '',
+            confirmPassword: '',
+            age: 0,
+            nationality: 'Netherlands'
+        } as RegisterFormvalues
     })
 
     const handleChange = (
