@@ -39,6 +39,7 @@ export default function RegisterForm() {
     return(
         <div className="register-container">
             <h1 className="register-title">Register</h1>
+            <p>form created using React hooks</p>
             <form className="register-form" onSubmit={handleSubmit}>
                 <div className="form-row">
                     <label htmlFor="username">Username</label>
