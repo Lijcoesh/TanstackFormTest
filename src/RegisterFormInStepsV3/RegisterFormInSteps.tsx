@@ -2,7 +2,7 @@ import { useState } from "react";
 import StepButton from "./formComponents/StepButton";
 import { RegisterFormInStepsSteps } from "./RegisterFormInStepsSteps";
 
-export default function RegisterFormInStepsV2() {
+export default function RegisterFormInStepsV3() {
     const [currentStep, setCurrentStep] = useState(0);
     const [disablePreviousButton, setDisablePreviousButton] = useState(false)
     const [disableNextButton, setDisableNextButton] = useState(false)
