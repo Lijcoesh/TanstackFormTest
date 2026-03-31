@@ -1,10 +1,11 @@
 interface IProps {
     onClick: () => void
     disabled: boolean
+    text: string
 }
 
-export default function NextStepButton(props: IProps) {
-    const { onClick, disabled } = props
+export default function StepButton(props: IProps) {
+    const { onClick, disabled, text } = props
 
     return (
         <button 
@@ -13,7 +14,7 @@ export default function NextStepButton(props: IProps) {
             onClick={onClick}
             disabled={disabled}
         >
-            Next
+            {text}
         </button>
     )
 }
