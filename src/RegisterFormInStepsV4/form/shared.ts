@@ -7,7 +7,7 @@ export const defaultValues = {
     password: '',
     confirmPassword: '',
     age: 0,
-    nationality: 'Netherlands'
+    nationality: { id: 0, name: '', populationCount: 0 },
 } as RegisterFormvalues
 
 {/* all components using registerFormOpts will be tied to the same form state, so they can share values and validation */}
