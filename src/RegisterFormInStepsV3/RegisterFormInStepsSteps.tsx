@@ -1,3 +1,4 @@
+import { Box } from "@mui/material"
 import { useAppForm } from "./form/form"
 import { registerFormOpts } from "./form/shared"
 import { Step1 } from "./StepsComponents/Step1/Step1"
@@ -25,17 +26,17 @@ export function RegisterFormInStepsSteps({ currentStep }: IProps) {
                 }}
             >
                 <form.ErrorSummary />
-                <div className="form-row">
-                    <div style={{ display: currentStep === 0 ? 'block' : 'none' }}>
+                <Box>
+                    <Box sx={{ display: currentStep === 0 ? 'block' : 'none' }}>
                         <Step1 form={form} />
-                    </div>
-                    <div style={{ display: currentStep === 1 ? 'block' : 'none' }}>
+                    </Box>
+                    <Box sx={{ display: currentStep === 1 ? 'block' : 'none' }}>
                         <Step2 form={form} />
-                    </div>
-                    <div style={{ display: currentStep === 2 ? 'block' : 'none' }}>
+                    </Box>
+                    <Box sx={{ display: currentStep === 2 ? 'block' : 'none' }}>
                         <Step3 form={form} />
-                    </div>
-                </div>   
+                    </Box>
+                </Box>
                 <form.SubmitButton />
             </form>
         </form.AppForm>

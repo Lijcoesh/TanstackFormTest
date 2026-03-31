@@ -1,3 +1,5 @@
+import { Button } from "@mui/material"
+
 interface IProps {
     onClick: () => void
     disabled: boolean
@@ -8,13 +10,12 @@ export default function StepButton(props: IProps) {
     const { onClick, disabled, text } = props
 
     return (
-        <button 
-            className="next-btn" 
-            type="button" 
-            onClick={onClick}
+        <Button 
+            onClick={onClick} 
             disabled={disabled}
+            variant="contained"
         >
             {text}
-        </button>
+        </Button>
     )
 }

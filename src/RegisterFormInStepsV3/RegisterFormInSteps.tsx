@@ -1,6 +1,8 @@
 import { useState } from "react";
 import StepButton from "./formComponents/StepButton";
 import { RegisterFormInStepsSteps } from "./RegisterFormInStepsSteps";
+import { Box, Typography } from "@mui/material";
+import ListOfFeatures from "./ListOfFeatures";
 
 export default function RegisterFormInStepsV3() {
     const [currentStep, setCurrentStep] = useState(0);
@@ -23,26 +25,28 @@ export default function RegisterFormInStepsV3() {
         setCurrentStep((prevStep) => prevStep + 1);
     }
 
-    {/* form.AppForm should be replaced with RegisterFormInStepsSteps, but can't seem to get it done */}
     return(
-        <div className="register-container">
-            <h1 className="register-title">Register</h1>
-            <div>
-                <h4>Form Features:</h4>
-                <ul>
-                    <li>Using TanStack Form</li>
-                    <li>with seperate components for fields</li>
-                    <li>Using a reusable component for password fields</li>
-                    <li>Using a reusable component for select fields</li>
-                </ul>
-                <h4>Changes since last version:</h4>
-                <ul>
-                    <li>Seperated logic and UI into different components</li>
-                </ul>
-            </div>
-            <RegisterFormInStepsSteps currentStep={currentStep} />
-            <StepButton onClick={handlePreviousStep} disabled={disablePreviousButton} text="Previous" />
-            <StepButton onClick={handleNextStep} disabled={disableNextButton} text="Next" />
-        </div>
+        <Box sx={{ display: 'flex', gap: 4, maxWidth: 1200, margin: '0 auto' }}>
+            <Box sx={{ flex: 1, backgroundColor: '#f5f5f5', padding: 3, borderRadius: 2 }}>
+                <Typography 
+                    variant="h1" 
+                    sx={{
+                        marginBottom: 4,
+                        fontWeight: 700,
+                        letterSpacing: 0.5,
+                        color: 'primary.main',
+                        textShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
+                    }}
+                >
+                    Register
+                </Typography>
+                <RegisterFormInStepsSteps currentStep={currentStep} />
+                <StepButton onClick={handlePreviousStep} disabled={disablePreviousButton} text="Previous" />
+                <StepButton onClick={handleNextStep} disabled={disableNextButton} text="Next" />
+            </Box>
+            <Box sx={{ flex: 1, backgroundColor: '#f5f5f5', padding: 3, borderRadius: 2 }}>
+                <ListOfFeatures />
+            </Box>
+        </Box>
     )
 }

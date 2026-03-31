@@ -1,3 +1,4 @@
+import { Button } from "@mui/material"
 import { useFormContext } from "../form/form-context"
 
 export default function SubmitButton() {
@@ -7,13 +8,14 @@ export default function SubmitButton() {
         <div className="form-row actions">
             <form.Subscribe selector={(state) => state.canSubmit}>
                 {(canSubmit) => (
-                    <button 
-                        className="submit-btn" 
+                    <Button 
                         type="submit" 
-                        disabled={!canSubmit}
+                        disabled={!canSubmit} 
+                        variant="contained"
+                        sx={{ mb: 2}}
                     >
                         Submit
-                    </button>
+                    </Button>
                 )}
             </form.Subscribe>
         </div>
