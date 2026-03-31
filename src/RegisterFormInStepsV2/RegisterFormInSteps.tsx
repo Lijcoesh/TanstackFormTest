@@ -40,7 +40,7 @@ export default function RegisterFormInStepsV2() {
                     <li>Seperated logic and UI into different components</li>
                 </ul>
             </div>
-            <RegisterFormInStepsSteps currentStep={currentStep} showSubmitButton={currentStep === 2} />
+            <RegisterFormInStepsSteps currentStep={currentStep} />
             <StepButton onClick={handlePreviousStep} disabled={disablePreviousButton} text="Previous" />
             <StepButton onClick={handleNextStep} disabled={disableNextButton} text="Next" />
         </div>

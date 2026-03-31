@@ -6,10 +6,9 @@ import { Step3 } from "./StepsComponents/Step3/Step3"
 
 interface IProps {
     currentStep: number
-    showSubmitButton: boolean
 }
 
-export function RegisterFormInStepsSteps({ currentStep, showSubmitButton }: IProps) {
+export function RegisterFormInStepsSteps({ currentStep }: IProps) {
     const form = useAppForm({
         ...registerFormOpts,
         onSubmit: (values) => {
@@ -25,18 +24,19 @@ export function RegisterFormInStepsSteps({ currentStep, showSubmitButton }: IPro
                     form.handleSubmit()
                 }}
             >
+                <form.ErrorSummary />
                 <div className="form-row">
-                    {currentStep === 0 && (
+                    <div style={{ display: currentStep === 0 ? 'block' : 'none' }}>
                         <Step1 form={form} />
-                    )} 
-                    {currentStep === 1 && (
+                    </div>
+                    <div style={{ display: currentStep === 1 ? 'block' : 'none' }}>
                         <Step2 form={form} />
-                    )}
-                    {currentStep === 2 && (
+                    </div>
+                    <div style={{ display: currentStep === 2 ? 'block' : 'none' }}>
                         <Step3 form={form} />
-                    )}
-                </div>
-                {showSubmitButton && <form.SubmitButton />}
+                    </div>
+                </div>   
+                <form.SubmitButton />
             </form>
         </form.AppForm>
     )
