@@ -8,8 +8,8 @@ export const Step3 = withForm({
     render: ({ form }) => {
         return (
             <>
-                <AgeForm form={form} />
                 <NationalityForm form={form} />
+                <AgeForm form={form} />
             </>
         )
     }
