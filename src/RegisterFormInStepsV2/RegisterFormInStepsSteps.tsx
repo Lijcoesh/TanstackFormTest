@@ -31,8 +31,8 @@ export const RegisterFormInStepsSteps = withForm({
                             <Step3 form={form} />
                         )}
                     </div>
+                    <form.SubmitButton />
                 </form>
-                {showSubmitButton && <form.SubmitButton />}
             </form.AppForm>
         )
     }
