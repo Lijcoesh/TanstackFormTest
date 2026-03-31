@@ -1,7 +1,5 @@
 import { withForm } from "../../form/form";
 import { registerFormOpts } from "../../form/shared";
-import { EmailValidators } from "../../Validators/EmailValidators";
-import { validators } from "../../Validators/validators";
 
 export const EmailForm = withForm({
     ...registerFormOpts,
@@ -10,8 +8,14 @@ export const EmailForm = withForm({
             <form.AppField 
                 name="email"
                 validators={{
-                    ...validators.isRequired('Email'),
-                    ...EmailValidators.isEmail('Email'),
+                    onChange: ({value}) => {
+                        if(value.trim() === '') {
+                            return 'Email is required'
+                        }
+                        if(!/\S+@\S+\.\S+/.test(value)) {
+                            return 'Email is invalid'
+                        }
+                    },
                 }}
             >
                 {(field) => {

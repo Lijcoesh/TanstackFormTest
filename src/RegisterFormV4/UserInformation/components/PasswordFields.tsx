@@ -1,6 +1,4 @@
 import { withFieldGroup } from "../../form/form";
-import { StringValidators } from "../../Validators/StringValidators";
-import { validators } from "../../Validators/validators";
 
 {/* Defines the types */}
 type PasswordFields = {
@@ -23,8 +21,14 @@ export const PasswordFields = withFieldGroup({
                 <group.AppField 
                     name="password" 
                     validators={{
-                        ...validators.isRequired('Password'),
-                        ...StringValidators.minLength(6, 'Password'),
+                        onChange: ({value}) => {
+                            if(value.trim() === '') {
+                                return 'Password is required'
+                            }
+                            if(value.length < 6) {
+                                return 'Password must be at least 6 characters'
+                            }
+                        },
                     }}
                 >
                     {(field) => {
@@ -40,8 +44,10 @@ export const PasswordFields = withFieldGroup({
                 <group.AppField 
                     name="confirmPassword" 
                     validators={{
-                        ...validators.isRequired('Confirm Password'),
                         onChange: ({value, fieldApi}) => {
+                            if(value.trim() === '') {
+                                return 'Confirm Password is required'
+                            }
                             if(value !== fieldApi.form.getFieldValue('password')) {
                                 return 'Passwords do not match'
                             }

@@ -1,7 +1,5 @@
 import { withForm } from "../../form/form";
 import { registerFormOpts } from "../../form/shared";
-import { NumberValidators } from "../../Validators/NumberValidators";
-import { validators } from "../../Validators/validators";
 
 export const AgeForm = withForm({
     ...registerFormOpts,
@@ -11,8 +9,11 @@ export const AgeForm = withForm({
                 <form.AppField 
                     name="age" 
                     validators={{
-                        ...validators.isRequired('Age'),
-                        ...NumberValidators.isPositiveNumber('Age'),
+                        onChange: ({value}) => {
+                            if(value <= 0) {
+                                return 'Age must be greater than 0'
+                            }
+                        },
                     }}
                 >
                     {(field) => {

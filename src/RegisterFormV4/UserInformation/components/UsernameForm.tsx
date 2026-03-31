@@ -1,7 +1,5 @@
 import { withForm } from "../../form/form"
 import { registerFormOpts } from "../../form/shared"
-import { StringValidators } from "../../Validators/StringValidators"
-import { validators } from "../../Validators/validators"
 
 {/* use form.AppField because it provides the context needed for the text input component */}
 export const UsernameForm = withForm({
@@ -11,9 +9,17 @@ export const UsernameForm = withForm({
             <form.AppField
                 name="username" 
                 validators={{
-                    ...validators.isRequired('Username'),
-                    ...StringValidators.minLength(3, 'Username'),
-                    ...StringValidators.maxLength(20, 'Username'),
+                    onChange: ({value}) => {
+                        if(value.trim() === '') {
+                            return 'Username is required'
+                        }
+                        if(value.length < 3) {
+                            return 'Username must be at least 3 characters'
+                        }
+                        if(value.length > 20) {
+                            return 'Username must be less than 20 characters'
+                        }
+                    },
                 }}
             >
                 {(field) => {
