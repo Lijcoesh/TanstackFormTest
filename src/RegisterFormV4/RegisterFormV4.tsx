@@ -1,7 +1,7 @@
 import "../Styling/RegisterForm.css"
-import { registerFormOpts } from "./form/shared"
-import { useAppForm } from "./form/form"
 import { AdditionalInfo } from "./AdditionalInfo/AdditionalInfo"
+import { useAppForm } from "./form/form"
+import { registerFormOpts } from "./form/shared"
 import { UserInformation } from "./UserInformation/UserInformation"
 
 export default function RegisterForm() {
