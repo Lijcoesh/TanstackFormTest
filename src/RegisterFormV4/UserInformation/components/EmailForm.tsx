@@ -1,5 +1,6 @@
 import { withForm } from "../../form/form";
 import { registerFormOpts } from "../../form/shared";
+import { EmailValidators } from "../../Validators/EmailValidators";
 import { validators } from "../../Validators/validators";
 
 export const EmailForm = withForm({
@@ -10,7 +11,7 @@ export const EmailForm = withForm({
                 name="email"
                 validators={{
                     ...validators.isRequired('Email'),
-                    ...validators.isEmail('Email'),
+                    ...EmailValidators.isEmail('Email'),
                 }}
             >
                 {(field) => {
