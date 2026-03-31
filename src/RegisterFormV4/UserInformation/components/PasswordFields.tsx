@@ -12,6 +12,7 @@ const defaultValues: PasswordFields = {
     confirmPassword: '',
 }
 
+{/* Instead of being tied to a specific form, this component is now a reusable field group that can be used in any form. */}
 export const PasswordFields = withFieldGroup({
     defaultValues: defaultValues,
     render: function Render({group}) {
