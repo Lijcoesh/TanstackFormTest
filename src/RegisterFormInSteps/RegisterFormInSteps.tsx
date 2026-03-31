@@ -4,11 +4,12 @@ import { Step2 } from "./StepsComponents/Step2/Step2";
 import { Step3 } from "./StepsComponents/Step3/Step3";
 import { useAppForm } from "./form/form";
 import { registerFormOpts } from "./form/shared";
-import NextStepButton from "./formComponents/NextStepButton";
+import StepButton from "./formComponents/StepButton";
 
 export default function RegisterFormInSteps() {
     const [currentStep, setCurrentStep] = useState(0);
-    const [disableButton, setDisableButton] = useState(false)
+    const [disablePreviousButton, setDisablePreviousButton] = useState(false)
+    const [disableNextButton, setDisableNextButton] = useState(false)
     
     const form = useAppForm({
         ...registerFormOpts,
@@ -17,9 +18,18 @@ export default function RegisterFormInSteps() {
         }
     })
 
-    const handleNextStep = () => {
+    const handlePreviousStep = () => {
+        setDisableNextButton(false);
         if(currentStep == 1) {
-            setDisableButton(true);
+            setDisablePreviousButton(true);
+        }
+        setCurrentStep((prevStep) => prevStep - 1);
+    }
+
+    const handleNextStep = () => {
+        setDisablePreviousButton(false);
+        if(currentStep == 1) {
+            setDisableNextButton(true);
         }
         setCurrentStep((prevStep) => prevStep + 1);
     }
@@ -48,7 +58,8 @@ export default function RegisterFormInSteps() {
                     </div>
                 </form>
             </form.AppForm>
-            <NextStepButton onClick={handleNextStep} disabled={disableButton} />
+            <StepButton onClick={handlePreviousStep} disabled={disablePreviousButton} text="Previous" />
+            <StepButton onClick={handleNextStep} disabled={disableNextButton} text="Next" />
         </div>
     )
 }
