@@ -11,8 +11,6 @@ export default function RegisterFormInSteps() {
     const [currentStep, setCurrentStep] = useState(0);
     const [disablePreviousButton, setDisablePreviousButton] = useState(false)
     const [disableNextButton, setDisableNextButton] = useState(false)
-    const [showSubmitButton, setShowSubmitButton] = useState(false)
-    
     const handleSubmit = (values: RegisterFormvalues) => {
         console.log(values)
     }
@@ -24,7 +22,6 @@ export default function RegisterFormInSteps() {
 
     const handlePreviousStep = () => {
         setDisableNextButton(false);
-        setShowSubmitButton(false);
         if(currentStep == 1) {
             setDisablePreviousButton(true);
         }
@@ -35,7 +32,6 @@ export default function RegisterFormInSteps() {
         setDisablePreviousButton(false);
         if(currentStep == 1) {
             setDisableNextButton(true);
-            setShowSubmitButton(true);
         }
         setCurrentStep((prevStep) => prevStep + 1);
     }
@@ -64,7 +60,7 @@ export default function RegisterFormInSteps() {
                         )}
                     </div>
                 </form>
-                {showSubmitButton && <form.SubmitButton />}
+                <form.SubmitButton />
             </form.AppForm>
             <StepButton onClick={handlePreviousStep} disabled={disablePreviousButton} text="Previous" />
             <StepButton onClick={handleNextStep} disabled={disableNextButton} text="Next" />
