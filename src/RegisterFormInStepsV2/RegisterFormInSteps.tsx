@@ -27,7 +27,19 @@ export default function RegisterFormInStepsV2() {
     return(
         <div className="register-container">
             <h1 className="register-title">Register</h1>
-            <p> form in steps created using TanStack Form with separate components, using a reusable component for password fields </p>
+            <div>
+                <h2>Form Features:</h2>
+                <ul>
+                    <li>In steps</li>
+                    <li>Using TanStack Form</li>
+                    <li>With separate components</li>
+                    <li>Using a reusable component for password fields</li>
+                </ul>
+                <h3>Changes since last version:</h3>
+                <ul>
+                    <li>Made code much more readable and maintainable by separating form logic and UI into different components</li>
+                </ul>
+            </div>
             <RegisterFormInStepsSteps currentStep={currentStep} showSubmitButton={currentStep === 2} />
             <StepButton onClick={handlePreviousStep} disabled={disablePreviousButton} text="Previous" />
             <StepButton onClick={handleNextStep} disabled={disableNextButton} text="Next" />
