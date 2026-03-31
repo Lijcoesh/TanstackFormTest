@@ -1,4 +1,4 @@
-import RegisterFormSwitcher from "./RegisterFormSwitcher";
+import RegisterFormSwitcher from "./RegisterFormSwitcher/RegisterFormSwitcher";
 
 export default function App() {
   return (
