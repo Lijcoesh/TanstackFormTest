@@ -1,5 +1,3 @@
 - error message per field
 
-- Create form like jobtitle using layers and object
-
 - Create a Dropdown using objects
