@@ -49,6 +49,7 @@ export default function RegisterForm() {
                         name="username"
                         value={formData.username}
                         onChange={handleChange}
+                        placeholder="Username"
                     />
                 </div>
 
@@ -60,6 +61,7 @@ export default function RegisterForm() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
+                        placeholder="Email"
                     />
                 </div>
 
@@ -71,6 +73,7 @@ export default function RegisterForm() {
                         name="password"
                         value={formData.password}
                         onChange={handleChange}
+                        placeholder="Password"
                     />
                 </div>
 
@@ -82,6 +85,7 @@ export default function RegisterForm() {
                         name="confirmPassword"
                         value={formData.confirmPassword}
                         onChange={handleChange}
+                        placeholder="Confirm Password"
                     />
                 </div>
 
@@ -93,6 +97,7 @@ export default function RegisterForm() {
                         name="age"
                         value={formData.age}
                         onChange={handleChange}
+                        placeholder="Age"
                     />
                 </div>
 

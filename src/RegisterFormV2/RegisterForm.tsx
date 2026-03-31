@@ -52,6 +52,7 @@ export default function RegisterForm() {
                                     name="username"
                                     value={field.state.value}
                                     onChange={(e) => field.handleChange(e.target.value)}
+                                    placeholder="Username"
                                 />
                                 {field.state.meta.errors.length > 0 && (
                                     <em>{field.state.meta.errors.join(', ')}</em>
@@ -80,6 +81,7 @@ export default function RegisterForm() {
                                     name="email"
                                     value={field.state.value}
                                     onChange={(e) => field.handleChange(e.target.value)}
+                                    placeholder="Email"
                                 />
                                 {field.state.meta.errors.length > 0 && (
                                     <em>{field.state.meta.errors.join(', ')}</em>
@@ -106,6 +108,7 @@ export default function RegisterForm() {
                                     name="password"
                                     value={field.state.value}
                                     onChange={(e) => field.handleChange(e.target.value)}
+                                    placeholder="Password"
                                 />
                                 {field.state.meta.errors.length > 0 && (
                                     <em>{field.state.meta.errors.join(', ')}</em>
@@ -133,6 +136,7 @@ export default function RegisterForm() {
                                     name="confirmPassword"
                                     value={field.state.value}
                                     onChange={(e) => field.handleChange(e.target.value)}
+                                    placeholder="Confirm Password"
                                 />
                                 {field.state.meta.errors.length > 0 && (
                                     <em>{field.state.meta.errors.join(', ')}</em>
@@ -156,6 +160,7 @@ export default function RegisterForm() {
                                     name="age"
                                     value={field.state.value}
                                     onChange={(e) => field.handleChange(Number(e.target.value))}
+                                    placeholder="Age"
                                 />
                                 {field.state.meta.errors.length > 0 && (
                                     <em>{field.state.meta.errors.join(', ')}</em>
