@@ -10,6 +10,9 @@ export const AgeForm = withForm({
                     name="age" 
                     validators={{
                         onChange: ({value}) => {
+                            if(value.toString().trim() === '') {
+                                return 'Age is required'
+                            }
                             if(value <= 0) {
                                 return 'Age must be greater than 0'
                             }
