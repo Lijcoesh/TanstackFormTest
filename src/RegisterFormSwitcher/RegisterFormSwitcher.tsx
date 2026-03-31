@@ -3,7 +3,7 @@ import RegisterFormV1 from "../RegisterFormV1/RegisterForm";
 import RegisterFormV2 from "../RegisterFormV2/RegisterForm";
 import RegisterFormV3 from "../RegisterFormV3/RegisterFormV3";
 import RegisterFormV4 from "../RegisterFormV4/RegisterFormV4";
-import RegisterFormInSteps from "../RegisterFormInSteps/RegisterFormInSteps";
+import RegisterFormInSteps from "../RegisterFormInStepsV1/RegisterFormInSteps";
 import FormButtons from "./FormButtons";
 import type { FormVersion } from "./FormVersion";
 import InStepsButtons from "./InStepsButtons";
