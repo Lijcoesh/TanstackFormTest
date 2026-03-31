@@ -1,7 +1,3 @@
-- Clean up folder structure
-
-- Create registerFormInStepsV2 using MUI
-
 - error message per field
 
 - Create form like jobtitle using layers and object
