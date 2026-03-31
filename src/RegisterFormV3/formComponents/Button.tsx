@@ -4,16 +4,18 @@ export default function FormButton() {
     const form = useFormContext()
 
     return (
-        <form.Subscribe selector={(state) => state.canSubmit}>
-            {(canSubmit) => (
-                <button 
-                    className="submit-btn" 
-                    type="submit" 
-                    disabled={!canSubmit}
-                >
-                    Submit
-                </button>
-            )}
-        </form.Subscribe>
+        <div className="form-row actions">
+            <form.Subscribe selector={(state) => state.canSubmit}>
+                {(canSubmit) => (
+                    <button 
+                        className="submit-btn" 
+                        type="submit" 
+                        disabled={!canSubmit}
+                    >
+                        Submit
+                    </button>
+                )}
+            </form.Subscribe>
+        </div>
     )
 }
