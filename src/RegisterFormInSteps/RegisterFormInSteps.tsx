@@ -46,6 +46,7 @@ export default function RegisterFormInSteps() {
                         form.handleSubmit()
                     }}
                 >
+                    <form.ErrorSummary />
                     <div className="form-row">
                         {currentStep === 0 && (
                             <Step1 form={form} />
