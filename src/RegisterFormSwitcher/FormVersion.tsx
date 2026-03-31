@@ -1,1 +1,1 @@
-export type FormVersion = "v1" | "v2" | "v3" | "v4" | "InSteps"
+export type FormVersion = "v1" | "v2" | "v3" | "v4" | "InStepsV1"
