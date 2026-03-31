@@ -1,5 +1,5 @@
-import { withForm } from "../../RegisterFormV4/form/form";
-import { registerFormOpts } from "../../RegisterFormV4/form/shared";
+import { withForm } from "../../form/form";
+import { registerFormOpts } from "../../form/shared";
 
 export const AgeForm = withForm({
     ...registerFormOpts,
