@@ -4,7 +4,7 @@ import { RegisterFormInStepsSteps } from "./RegisterFormInStepsSteps";
 import { Box, Typography } from "@mui/material";
 import ListOfFeatures from "./ListOfFeatures";
 
-export default function RegisterFormInStepsV3() {
+export default function RegisterFormInStepsV4() {
     const [currentStep, setCurrentStep] = useState(0);
     const [disablePreviousButton, setDisablePreviousButton] = useState(true)
     const [disableNextButton, setDisableNextButton] = useState(false)
