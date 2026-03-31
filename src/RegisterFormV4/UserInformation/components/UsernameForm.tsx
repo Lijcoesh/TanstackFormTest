@@ -1,5 +1,6 @@
 import { withForm } from "../../form/form"
 import { registerFormOpts } from "../../form/shared"
+import { validators } from "../../Validators/validators"
 
 {/* use form.AppField because it provides the context needed for the text input component */}
 export const UsernameForm = withForm({
@@ -8,13 +9,7 @@ export const UsernameForm = withForm({
         return (
             <form.AppField
                 name="username" 
-                validators={{
-                    onChange: ({value}) => {
-                        if(value.trim() === '') {
-                            return 'Username is required'
-                        }
-                    },
-                }}
+                validators={validators.isRequired('Username')}
             >
                 {(field) => {
                     return (
