@@ -1,4 +1,5 @@
-import { useFieldContext } from "../../RegisterFormV4/form/form-context"
+import { TextField } from '@mui/material'
+import { useFieldContext } from '../form/form-context'
 
 interface IProps {
     label: string
@@ -12,16 +13,21 @@ export default function TextInput(props: IProps) {
     const field = useFieldContext<string>()
 
     return (
-        <>
-            <label htmlFor={id}>{label}</label>
-            <input className="form-input" 
-                type={type || "text"}
-                id={id}
-                name={id}
-                value={field.state.value}
-                onChange={(e) => field.handleChange(e.target.value)}
-                placeholder={label}
-            />
-        </>
+        <TextField
+            id={id}
+            placeholder={label}
+            type={type || 'text'}
+            value={field.state.value}
+            onChange={(e) => field.handleChange(e.target.value)}
+            fullWidth
+            variant="outlined"
+            size="medium"
+            sx={{
+                mb: 2,
+                '& .MuiInputBase-input::placeholder': {
+                    opacity: 0.7,
+                },
+            }}
+        />
     )
 }
