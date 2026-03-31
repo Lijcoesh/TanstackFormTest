@@ -48,15 +48,15 @@ export default function RegisterFormInSteps() {
                 >
                     <form.ErrorSummary />
                     <div className="form-row">
-                        {currentStep === 0 && (
+                        <div style={{ display: currentStep === 0 ? 'block' : 'none' }}>
                             <Step1 form={form} />
-                        )} 
-                        {currentStep === 1 && (
+                        </div>
+                        <div style={{ display: currentStep === 1 ? 'block' : 'none' }}>
                             <Step2 form={form} />
-                        )}
-                        {currentStep === 2 && (
+                        </div>
+                        <div style={{ display: currentStep === 2 ? 'block' : 'none' }}>
                             <Step3 form={form} />
-                        )}
+                        </div>
                     </div>   
                     <form.SubmitButton />
                 </form>
