@@ -41,8 +41,10 @@ export default function RegisterFormInStepsV3() {
                     Register
                 </Typography>
                 <RegisterFormInStepsSteps currentStep={currentStep} />
-                <StepButton onClick={handlePreviousStep} disabled={disablePreviousButton} text="Previous" />
-                <StepButton onClick={handleNextStep} disabled={disableNextButton} text="Next" />
+                <Box sx={{ display: 'flex', justifyContent: 'space-between'}}>
+                    <StepButton onClick={handlePreviousStep} disabled={disablePreviousButton} text="Previous" />
+                    <StepButton onClick={handleNextStep} disabled={disableNextButton} text="Next" />
+                </Box>
             </Box>
             <Box sx={{ flex: 1, backgroundColor: '#f5f5f5', padding: 3, borderRadius: 2 }}>
                 <ListOfFeatures />
