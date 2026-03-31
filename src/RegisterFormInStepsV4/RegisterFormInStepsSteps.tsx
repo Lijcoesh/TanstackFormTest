@@ -14,6 +14,7 @@ export function RegisterFormInStepsSteps({ currentStep }: IProps) {
         ...registerFormOpts,
         onSubmit: (values) => {
             console.log(values, "form submitted")
+            console.log(values.value.nationality.populationCount, "population count")
         }
     })
 
