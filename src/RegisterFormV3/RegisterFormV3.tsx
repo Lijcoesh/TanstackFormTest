@@ -1,6 +1,7 @@
 import "../Styling/RegisterForm.css"
 import { registerFormOpts } from "./form/shared"
 import { useAppForm } from "./form/form"
+import FormButton from "./formComponents/Button"
 
 export default function RegisterForm() {
     const form = useAppForm({
@@ -144,7 +145,7 @@ export default function RegisterForm() {
                 </div>
 
                 <div className="form-row actions">
-                    <button className="submit-btn" type="submit">Submit</button>
+                    <FormButton />
                 </div>
             </form>
         </div>
