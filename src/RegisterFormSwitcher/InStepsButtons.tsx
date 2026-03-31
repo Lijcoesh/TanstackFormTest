@@ -1,0 +1,31 @@
+import type { FormVersion } from "./FormVersion"
+
+const buttonStyle = {
+    color: "#111827",
+    border: "none",
+    borderRadius: 6,
+    padding: "8px 16px",
+    cursor: "pointer",
+    fontWeight: 600
+}
+
+interface FormButtonsProps {
+    version: FormVersion
+    setVersion: (version: FormVersion) => void
+}
+
+export default function FormButtons({ version, setVersion }: FormButtonsProps) {
+    return (
+        <>
+            <button
+                onClick={() => setVersion("InStepsV1")}
+                style={{ 
+                    ...buttonStyle,
+                    background: version === "InStepsV1" ? "#2563eb" : "#e5e7eb"
+                }}
+            >
+                v1
+            </button>
+        </>
+    )
+}
