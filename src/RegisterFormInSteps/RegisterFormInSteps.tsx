@@ -5,19 +5,17 @@ import { Step3 } from "./StepsComponents/Step3/Step3";
 import { useAppForm } from "./form/form";
 import { registerFormOpts } from "./form/shared";
 import StepButton from "./formComponents/StepButton";
-import type { RegisterFormvalues } from "../RegisterFormV3/RegisterFormValues";
 
 export default function RegisterFormInSteps() {
     const [currentStep, setCurrentStep] = useState(0);
     const [disablePreviousButton, setDisablePreviousButton] = useState(false)
     const [disableNextButton, setDisableNextButton] = useState(false)
-    const handleSubmit = (values: RegisterFormvalues) => {
-        console.log(values)
-    }
 
     const form = useAppForm({
         ...registerFormOpts,
-        onSubmit: ({ value }) => handleSubmit(value),
+        onSubmit: (values) => {
+            console.log(values, "form submitted")
+        }
     })
 
     const handlePreviousStep = () => {
@@ -58,9 +56,9 @@ export default function RegisterFormInSteps() {
                         {currentStep === 2 && (
                             <Step3 form={form} />
                         )}
-                    </div>
+                    </div>   
+                    <form.SubmitButton />
                 </form>
-                <form.SubmitButton />
             </form.AppForm>
             <StepButton onClick={handlePreviousStep} disabled={disablePreviousButton} text="Previous" />
             <StepButton onClick={handleNextStep} disabled={disableNextButton} text="Next" />
