@@ -1,7 +1,8 @@
 import "../Styling/RegisterForm.css"
 import { registerFormOpts } from "./form/shared"
-import { useAppForm } from "./form/form"
+import { useAppForm } from "./form/form"    
 import { PasswordForm } from "./components/passwordForm"
+import { AgeForm } from "./components/ageForm"
 
 export default function RegisterForm() {
     const form = useAppForm({
@@ -66,26 +67,7 @@ export default function RegisterForm() {
                             }}
                         </form.AppField>
                         <PasswordForm form={form} />
-                        <form.AppField 
-                            name="age" 
-                            validators={{
-                                onChange: ({value}) => {
-                                    if(value <= 0) {
-                                        return 'Age must be greater than 0'
-                                    }
-                                },
-                            }}
-                        >
-                            {(field) => {
-                                return (
-                                    <field.TextInput
-                                        id="age"
-                                        label="Age"
-                                        type="number"
-                                    />
-                                );
-                            }}
-                        </form.AppField>
+                        <AgeForm form={form} />
                         <form.AppField 
                             name="nationality">
                             {(field) => {
