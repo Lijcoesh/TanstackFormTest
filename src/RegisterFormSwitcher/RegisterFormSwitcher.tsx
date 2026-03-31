@@ -21,7 +21,11 @@ export default function RegisterFormSwitcher() {
             In steps: 
             <InStepsButtons version={version} setVersion={setVersion} />
         </div>
-        {version === "v1" ? <RegisterFormV1 /> : version === "v2" ? <RegisterFormV2 /> : version === "v3" ? <RegisterFormV3 /> : version === "v4" ? <RegisterFormV4 /> : <RegisterFormInSteps />}
+        {version === "v1" ? <RegisterFormV1 /> 
+        : version === "v2" ? <RegisterFormV2 />
+        : version === "v3" ? <RegisterFormV3 /> 
+        : version === "v4" ? <RegisterFormV4 /> 
+        : <RegisterFormInSteps />}
     </div>
     );
 }
