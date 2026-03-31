@@ -2,7 +2,7 @@ import { EmailForm } from "./components/EmailForm";
 import { withForm } from "../form/form";
 import { registerFormOpts } from "../form/shared";
 import { UsernameForm } from "./components/UsernameForm";
-import { PasswordFields } from "./components/PasswordFields";
+import { PasswordFields } from "./components/Password/PasswordFields";
 
 export const UserInformation = withForm({
     ...registerFormOpts,
