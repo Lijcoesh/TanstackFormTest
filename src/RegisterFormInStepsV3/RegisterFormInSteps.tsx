@@ -6,7 +6,7 @@ import ListOfFeatures from "./ListOfFeatures";
 
 export default function RegisterFormInStepsV3() {
     const [currentStep, setCurrentStep] = useState(0);
-    const [disablePreviousButton, setDisablePreviousButton] = useState(false)
+    const [disablePreviousButton, setDisablePreviousButton] = useState(true)
     const [disableNextButton, setDisableNextButton] = useState(false)
 
     const handlePreviousStep = () => {
