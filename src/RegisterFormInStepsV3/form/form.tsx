@@ -3,8 +3,8 @@ import { fieldContext, formContext } from "./form-context";
 import SubmitButton from "../formComponents/SubmitButton";
 import StepButton from "../formComponents/StepButton";
 import ErrorSummary from "../formComponents/ErrorSummary";
-import TextInput from "../../RegisterFormInStepsV1/fieldComponents/TextInput";
-import Dropdown from "../../RegisterFormInStepsV1/fieldComponents/Dropdown";
+import TextInput from "../fieldComponents/TextInput";
+import Dropdown from "../fieldComponents/Dropdown";
 
 export const {useAppForm, withForm, withFieldGroup} = createFormHook({
     fieldContext: fieldContext,
