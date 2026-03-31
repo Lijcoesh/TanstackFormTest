@@ -23,7 +23,14 @@ export default function TextInput(props: IProps) {
                 placeholder={label}
             />
             {field.state.meta.errors.length > 0 && (
-                <em>{field.state.meta.errors.join(', ')}</em>
+                <em 
+                    style={{ 
+                        color: 'red', 
+                        fontSize: '0.875rem' 
+                    }}
+                >
+                    {field.state.meta.errors}
+                </em>
             )}
         </>
     )
