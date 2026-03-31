@@ -9,7 +9,7 @@ export const NationalityForm = withForm({
                 name="nationality">
                 {(field) => {
                     return (
-                        <field.DropDown
+                        <field.Dropdown
                             id="nationality"
                             label="Nationality"
                         />

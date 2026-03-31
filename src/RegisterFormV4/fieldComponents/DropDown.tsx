@@ -1,11 +1,11 @@
-import { useFieldContext } from "../../RegisterFormV4/form/form-context"
+import { useFieldContext } from "../form/form-context"
 
 interface IProps {
     label: string
     id: string
 }
 
-export default function DropDown(props: IProps) {
+export default function Dropdown(props: IProps) {
     const { label, id } = props
 
     const field = useFieldContext<string>()
