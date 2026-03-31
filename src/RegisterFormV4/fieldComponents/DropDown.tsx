@@ -1,14 +1,14 @@
 import { useFieldContext } from "../form/form-context"
 
-interface IProps {
+interface IProps<T> {
     label: string
     id: string
 }
 
-export default function Dropdown(props: IProps) {
+export default function Dropdown<T>(props: IProps<T>) {
     const { label, id } = props
 
-    const field = useFieldContext<string>()
+    const field = useFieldContext<T>()
 
     return (
         <>
