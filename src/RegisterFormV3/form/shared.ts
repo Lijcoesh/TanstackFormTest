@@ -10,6 +10,7 @@ export const defaultValues = {
     nationality: 'Netherlands'
 } as RegisterFormvalues
 
+{/* all components using registerFormOpts will be tied to the same form state, so they can share values and validation */}
 export const registerFormOpts = formOptions({
     defaultValues,
 })
