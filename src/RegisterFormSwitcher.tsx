@@ -3,6 +3,7 @@ import RegisterFormV1 from "./RegisterFormV1/RegisterForm";
 import RegisterFormV2 from "./RegisterFormV2/RegisterForm";
 import RegisterFormV3 from "./RegisterFormV3/RegisterFormV3";
 import RegisterFormV4 from "./RegisterFormV4/RegisterFormV4";
+import RegisterFormInSteps from "./RegisterFormInSteps/RegisterFormInSteps";
 
 const buttonStyle = {
     color: "#111827",
@@ -14,7 +15,7 @@ const buttonStyle = {
 }
 
 export default function RegisterFormSwitcher() {
-    const [version, setVersion] = useState<"v1" | "v2" | "v3" | "v4">("v4");
+    const [version, setVersion] = useState<"v1" | "v2" | "v3" | "v4" | "InSteps">("v4");
 
     return (
     <div>
@@ -55,8 +56,17 @@ export default function RegisterFormSwitcher() {
             >
                 V4
             </button>
+            <button
+                onClick={() => setVersion("InSteps")}
+                style={{
+                    ...buttonStyle,
+                    background: version === "InSteps" ? "#2563eb" : "#e5e7eb"
+                }}
+            >
+                In Steps
+            </button>
         </div>
-        {version === "v1" ? <RegisterFormV1 /> : version === "v2" ? <RegisterFormV2 /> : version === "v3" ? <RegisterFormV3 /> : <RegisterFormV4 />}
+        {version === "v1" ? <RegisterFormV1 /> : version === "v2" ? <RegisterFormV2 /> : version === "v3" ? <RegisterFormV3 /> : version === "v4" ? <RegisterFormV4 /> : <RegisterFormInSteps />}
     </div>
     );
 }
