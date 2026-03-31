@@ -1,4 +1,4 @@
-import { withFieldGroup } from "./form/form";
+import { withFieldGroup } from "../../form/form";
 
 {/* Defines the types */}
 type PasswordFields = {

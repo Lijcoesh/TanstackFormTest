@@ -1,5 +1,5 @@
-import { withForm } from "../../RegisterFormV4/form/form"
-import { registerFormOpts } from "../../RegisterFormV4/form/shared"
+import { withForm } from "../../form/form"
+import { registerFormOpts } from "../../form/shared"
 
 {/* use form.AppField because it provides the context needed for the text input component */}
 export const UsernameForm = withForm({

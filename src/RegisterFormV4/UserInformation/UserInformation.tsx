@@ -1,8 +1,8 @@
-import { PasswordForm } from "../RegisterFormV3/components/passwordForm";
-import { EmailForm } from "./EmailForm";
-import { withForm } from "./form/form";
-import { registerFormOpts } from "./form/shared";
-import { UsernameForm } from "./UsernameForm";
+import { PasswordForm } from "../../RegisterFormV3/components/passwordForm";
+import { EmailForm } from "./components/EmailForm";
+import { withForm } from "../form/form";
+import { registerFormOpts } from "../form/shared";
+import { UsernameForm } from "./components/UsernameForm";
 
 export const UserInformation = withForm({
     ...registerFormOpts,
