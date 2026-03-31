@@ -38,7 +38,18 @@ export default function RegisterFormInStepsV1() {
     return(
         <div className="register-container">
             <h1 className="register-title">Register</h1>
-            <p> form in steps created using TanStack Form with separate components, using a reusable component for password fields </p>
+            <div>
+                <h4>Form Features:</h4>
+                <ul>
+                    <li>Using TanStack Form</li>
+                    <li>with seperate components for fields</li>
+                    <li>Using a reusable component for password fields</li>
+                </ul>
+                <h4>Changes since last version:</h4>
+                <ul>
+                    <li>Form is now separated into steps</li>
+                </ul>
+            </div>
             <form.AppForm>
                 <form className="register-form"
                     onSubmit={(e) => {

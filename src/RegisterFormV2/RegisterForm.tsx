@@ -28,7 +28,12 @@ export default function RegisterForm() {
     return(
         <div className="register-container">
             <h1 className="register-title">Register</h1>
-            <p>form created using TanStack Form</p>
+            <div>
+                <h4>Form Features:</h4>
+                <ul>
+                    <li>Using TanStack Form</li>
+                </ul>
+            </div>
             <form className="register-form" 
                 onSubmit={(e) => {
                     e.preventDefault()
