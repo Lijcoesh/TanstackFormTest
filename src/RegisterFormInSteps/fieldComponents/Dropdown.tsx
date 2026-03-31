@@ -24,9 +24,6 @@ export default function Dropdown(props: IProps) {
                 <option value="ca">Canada</option>
                 <option value="uk">United Kingdom</option>
             </select>
-            {field.state.meta.errors.length > 0 && (
-                <em>{field.state.meta.errors.join(', ')}</em>
-            )}
         </>
     )
 }

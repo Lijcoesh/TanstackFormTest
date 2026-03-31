@@ -22,16 +22,6 @@ export default function TextInput(props: IProps) {
                 onChange={(e) => field.handleChange(e.target.value)}
                 placeholder={label}
             />
-            {field.state.meta.errors.length > 0 && (
-                <em 
-                    style={{ 
-                        color: 'red', 
-                        fontSize: '0.875rem' 
-                    }}
-                >
-                    {field.state.meta.errors}
-                </em>
-            )}
         </>
     )
 }
