@@ -1,13 +1,8 @@
-import { withFieldGroup } from "../../form/form";
-
-{/* Defines the types */}
-type PasswordFields = {
-    password: string;
-    confirmPassword: string;
-}
+import { withFieldGroup } from "../../../form/form";
+import type { PasswordType } from "./PasswordType";
 
 {/* Defines the default values for the fields in this group */}
-const defaultValues: PasswordFields = {
+const defaultValues: PasswordType = {
     password: '',
     confirmPassword: '',
 }
