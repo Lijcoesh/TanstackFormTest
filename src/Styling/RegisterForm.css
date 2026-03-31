@@ -77,6 +77,37 @@ label{
     background: #1e4fd8;
 }
 
+.error-summary {
+    background-color: #fee2e2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.error-summary-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #dc2626;
+    margin-bottom: 8px;
+}
+
+.error-list {
+    margin: 0;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.error-list li {
+    font-size: 13px;
+    color: #991b1b;
+    margin-bottom: 4px;
+}
+
+.error-list li:last-child {
+    margin-bottom: 0;
+}
+
 .next-btn {
     background: var(--accent);
     color: white;
