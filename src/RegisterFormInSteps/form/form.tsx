@@ -4,6 +4,7 @@ import TextInput from "../../RegisterFormInSteps/fieldComponents/TextInput";
 import Dropdown from "../../RegisterFormInSteps/fieldComponents/Dropdown";
 import SubmitButton from "../formComponents/SubmitButton";
 import StepButton from "../formComponents/StepButton";
+import ErrorSummary from "../formComponents/ErrorSummary";
 
 export const {useAppForm, withForm, withFieldGroup} = createFormHook({
     fieldContext: fieldContext,
@@ -15,5 +16,6 @@ export const {useAppForm, withForm, withFieldGroup} = createFormHook({
     formComponents: {
         SubmitButton,
         StepButton,
+        ErrorSummary,
     }, // use to pass things related to the form, like a submit button, to the form, so you can use them in your form with the <form.Form> component
 })
