@@ -3,10 +3,11 @@ import RegisterFormV1 from "../RegisterFormV1/RegisterForm";
 import RegisterFormV2 from "../RegisterFormV2/RegisterForm";
 import RegisterFormV3 from "../RegisterFormV3/RegisterFormV3";
 import RegisterFormV4 from "../RegisterFormV4/RegisterFormV4";
-import RegisterFormInSteps from "../RegisterFormInStepsV1/RegisterFormInSteps";
+import RegisterFormInStepsV1 from "../RegisterFormInStepsV1/RegisterFormInSteps";
 import FormButtons from "./FormButtons";
 import type { FormVersion } from "./FormVersion";
 import InStepsButtons from "./InStepsButtons";
+import RegisterFormInStepsV2 from "../RegisterFormInStepsV2/RegisterFormInSteps";
 
 export default function RegisterFormSwitcher() {
     const [version, setVersion] = useState<FormVersion>("InStepsV1");
@@ -25,7 +26,9 @@ export default function RegisterFormSwitcher() {
         : version === "v2" ? <RegisterFormV2 />
         : version === "v3" ? <RegisterFormV3 /> 
         : version === "v4" ? <RegisterFormV4 /> 
-        : <RegisterFormInSteps />}
+        : version === "InStepsV1" ? <RegisterFormInStepsV1 />
+        : <RegisterFormInStepsV2 />
+        }
     </div>
     );
 }
