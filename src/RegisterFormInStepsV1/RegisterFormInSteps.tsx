@@ -6,7 +6,7 @@ import { useAppForm } from "./form/form";
 import { registerFormOpts } from "./form/shared";
 import StepButton from "./formComponents/StepButton";
 
-export default function RegisterFormInSteps() {
+export default function RegisterFormInStepsV1() {
     const [currentStep, setCurrentStep] = useState(0);
     const [disablePreviousButton, setDisablePreviousButton] = useState(false)
     const [disableNextButton, setDisableNextButton] = useState(false)
