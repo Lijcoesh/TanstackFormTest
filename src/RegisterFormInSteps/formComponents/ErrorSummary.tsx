@@ -7,9 +7,7 @@ export default function ErrorSummary() {
         <form.Subscribe selector={(state) => state.fieldMeta}>
             {(fieldMeta) => {
                 const errors = Object.entries(fieldMeta as Record<string, { errors?: string[] }>)
-                    .flatMap(([fieldName, meta]) => 
-                        meta?.errors?.map((message: string) => ({ fieldName, message })) ?? []
-                    )
+                    .flatMap(([fieldName, meta]) => meta?.errors?.map((message) => ({ fieldName, message })) || [])
 
                 if (!errors.length) return null
 
