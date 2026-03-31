@@ -1,7 +1,9 @@
-1. Replace app.form in registerforminsteps with registerforminstepssteps
+- Clean up folder structure
 
-2. Create registerFormInStepsV2 using MUI
+- Create registerFormInStepsV2 using MUI
 
-3. Create form like jobtitle using layers and object
+- error message per field
 
-4. Create a Dropdown using objects
+- Create form like jobtitle using layers and object
+
+- Create a Dropdown using objects
