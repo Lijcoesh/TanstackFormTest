@@ -15,7 +15,7 @@ export default function RegisterForm() {
     return(
         <div className="register-container">
             <h1 className="register-title">Register</h1>
-            <p>form created using TanStack Form with separate components</p>
+            <p>form created using TanStack Form with separate components, using a reusable component for password fields</p>
             <form.AppForm>
                 <form className="register-form" 
                     onSubmit={(e) => {
