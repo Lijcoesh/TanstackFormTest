@@ -12,10 +12,11 @@ export default function ListOfFeatures() {
                     <ListItem>- Using a reusable component for password fields</ListItem>
                     <ListItem>- Using a reusable component for select fields</ListItem>
                     <ListItem>- Seperate logic and UI into different components</ListItem>
+                    <ListItem>- Using Material UI</ListItem>
                 </List>
                 <Typography variant="h6">Changes since last version:</Typography>
                 <List>
-                    <ListItem>- Use Material UI</ListItem>
+                    <ListItem>- Use Objects in Dropdown</ListItem>
                 </List>
             </Box>
         </Box>
