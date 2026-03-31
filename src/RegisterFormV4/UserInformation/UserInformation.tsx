@@ -1,8 +1,8 @@
-import { PasswordForm } from "../../RegisterFormV3/components/passwordForm";
 import { EmailForm } from "./components/EmailForm";
 import { withForm } from "../form/form";
 import { registerFormOpts } from "../form/shared";
 import { UsernameForm } from "./components/UsernameForm";
+import { PasswordFields } from "./components/PasswordFields";
 
 export const UserInformation = withForm({
     ...registerFormOpts,
@@ -11,7 +11,13 @@ export const UserInformation = withForm({
             <>
                 <UsernameForm form={form} />
                 <EmailForm form={form} />
-                <PasswordForm form={form} />
+                <PasswordFields 
+                    form={form}
+                    fields={{
+                        password: 'password',
+                        confirmPassword: 'confirmPassword'
+                    }}
+                />
             </>
         )
     }
