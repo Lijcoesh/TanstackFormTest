@@ -1,6 +1,6 @@
 import { withForm } from "../form/form";
 import { registerFormOpts } from "../form/shared";
-import { AgeForm } from "./ageForm";
+import { AgeForm } from "./AgeForm";
 import { NationalityForm } from "./NationalityForm";
 
 export const AdditionalInfo = withForm({
