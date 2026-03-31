@@ -1,11 +1,8 @@
 import "../Styling/RegisterForm.css"
 import { registerFormOpts } from "./form/shared"
-import { useAppForm } from "./form/form"    
-import { PasswordForm } from "./components/passwordForm"
-import { AgeForm } from "./components/ageForm"
-import { NationalityForm } from "./components/NationalityForm"
-import { EmailForm } from "./components/EmailForm"
-import { UsernameForm } from "./components/UsernameForm"
+import { useAppForm } from "./form/form"
+import { UserInformation } from "./components/UserInformation"
+import { AdditionalInfo } from "./components/AdditionalInfo"
 
 export default function RegisterForm() {
     const form = useAppForm({
@@ -27,11 +24,8 @@ export default function RegisterForm() {
                     }}
                 >
                     <div className="form-row">
-                        <UsernameForm form={form} />
-                        <EmailForm form={form} />
-                        <PasswordForm form={form} />
-                        <AgeForm form={form} />
-                        <NationalityForm form={form} />
+                        <UserInformation form={form} />
+                        <AdditionalInfo form={form} />
                     </div>
                     <form.FormButton />
                 </form>
