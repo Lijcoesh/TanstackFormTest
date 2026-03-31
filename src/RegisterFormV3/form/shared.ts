@@ -1,5 +1,5 @@
 import { formOptions } from "@tanstack/react-form";
-import type { RegisterFormvalues } from "./RegisterFormValues";
+import type { RegisterFormvalues } from "../RegisterFormValues";
 
 export const defaultValues = {
     username: '',

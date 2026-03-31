@@ -1,6 +1,6 @@
 import "../Styling/RegisterForm.css"
-import { registerFormOpts } from "./shared"
-import { useAppForm } from "./form"
+import { registerFormOpts } from "./form/shared"
+import { useAppForm } from "./form/form"
 
 export default function RegisterForm() {
     const form = useAppForm({
