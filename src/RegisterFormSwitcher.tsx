@@ -15,7 +15,7 @@ const buttonStyle = {
 }
 
 export default function RegisterFormSwitcher() {
-    const [version, setVersion] = useState<"v1" | "v2" | "v3" | "v4" | "InSteps">("v4");
+    const [version, setVersion] = useState<"v1" | "v2" | "v3" | "v4" | "InSteps">("InSteps");
 
     return (
     <div>
