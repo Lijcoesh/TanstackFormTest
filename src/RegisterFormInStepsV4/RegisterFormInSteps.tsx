@@ -35,7 +35,6 @@ export default function RegisterFormInStepsV4() {
                         fontWeight: 700,
                         letterSpacing: 0.5,
                         color: 'primary.main',
-                        textShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
                     }}
                 >
                     Register
