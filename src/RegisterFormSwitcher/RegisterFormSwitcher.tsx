@@ -10,6 +10,7 @@ import InStepsButtons from "./InStepsButtons";
 import RegisterFormInStepsV2 from "../RegisterFormInStepsV2/RegisterFormInSteps";
 import RegisterFormInStepsV3 from "../RegisterFormInStepsV3/RegisterFormInSteps";
 import RegisterFormInStepsV4 from "../RegisterFormInStepsV4/RegisterFormInSteps";
+import RegisterFormInStepsV5 from "../RegisterFormInStepsV5/RegisterFormInSteps";
 
 export default function RegisterFormSwitcher() {
     const [version, setVersion] = useState<FormVersion>("InStepsV4");
@@ -31,7 +32,8 @@ export default function RegisterFormSwitcher() {
         : version === "InStepsV1" ? <RegisterFormInStepsV1 />
         : version === "InStepsV2" ? <RegisterFormInStepsV2 />
         : version === "InStepsV3" ? <RegisterFormInStepsV3 />
-        : <RegisterFormInStepsV4 />
+        : version === "InStepsV4" ? <RegisterFormInStepsV4 />
+        : <RegisterFormInStepsV5 />
         }
     </div>
     );

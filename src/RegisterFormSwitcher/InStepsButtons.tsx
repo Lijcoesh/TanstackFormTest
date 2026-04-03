@@ -53,6 +53,15 @@ export default function FormButtons({ version, setVersion }: FormButtonsProps) {
             >
                 v4
             </button>
+            <button
+                onClick={() => setVersion("InStepsV5")}
+                style={{ 
+                    ...buttonStyle,
+                    background: version === "InStepsV5" ? "#2563eb" : "#e5e7eb"
+                }}
+            >
+                v5
+            </button>
         </>
     )
 }
