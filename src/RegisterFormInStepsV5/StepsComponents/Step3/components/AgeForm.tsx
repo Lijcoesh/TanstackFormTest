@@ -25,6 +25,7 @@ export const AgeForm = withForm({
                                 id="age"
                                 label="Age"
                                 type="number"
+                                min={0}
                             />
                         );
                     }}

@@ -6,10 +6,11 @@ interface IProps {
     label: string
     id: string
     type?: string
+    min?: number
 }
 
 export default function TextInput(props: IProps) {
-    const { label, id, type } = props
+    const { label, id, type, min } = props
     const showInlineErrors = useInlineErrors()
 
     const field = useFieldContext<string>()
@@ -27,6 +28,7 @@ export default function TextInput(props: IProps) {
                 variant="outlined"
                 size="medium"
                 error={showInlineErrors && hasErrors}
+                slotProps={min !== undefined ? { htmlInput: { min } } : undefined}
                 sx={{
                     mb: showInlineErrors && hasErrors ? 0.5 : 2,
                     '& .MuiInputBase-input::placeholder': {
