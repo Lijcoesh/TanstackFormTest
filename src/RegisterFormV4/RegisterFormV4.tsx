@@ -3,6 +3,7 @@ import { AdditionalInfo } from "./AdditionalInfo/AdditionalInfo"
 import { useAppForm } from "./form/form"
 import { registerFormOpts } from "./form/shared"
 import { UserInformation } from "./UserInformation/UserInformation"
+import { Box, List, ListItem, ListItemText, Typography } from "@mui/material"
 
 export default function RegisterForm() {
     const form = useAppForm({
@@ -13,19 +14,25 @@ export default function RegisterForm() {
     })
 
     return(
-        <div className="register-container">
-            <h1 className="register-title">Register</h1>
-            <div>
-                <h4>Form Features:</h4>
-                <ul>
-                    <li>Using TanStack Form</li>
-                    <li>with seperate components for fields</li>
-                </ul>
-                <h4>Changes since last version:</h4>
-                <ul>
-                    <li>Using a reusable component for password fields</li>
-                </ul>
-            </div>
+        <Box className="register-container">
+            <Typography variant="h3" className="register-title" gutterBottom>Register</Typography>
+            <Box mb={2}>
+                <Typography variant="h6">Form Features:</Typography>
+                <List>
+                    <ListItem disablePadding>
+                        <ListItemText primary="Using TanStack Form" />
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <ListItemText primary="with seperate components for fields" />
+                    </ListItem>
+                </List>
+                <Typography variant="h6">Changes since last version:</Typography>
+                <List>
+                    <ListItem disablePadding>
+                        <ListItemText primary="Using a reusable component for password fields" />
+                    </ListItem>
+                </List>
+            </Box>
             <form.AppForm>
                 <form className="register-form" 
                     onSubmit={(e) => {
@@ -33,13 +40,13 @@ export default function RegisterForm() {
                         form.handleSubmit()
                     }}
                 >
-                    <div className="form-row">
+                    <Box className="form-row">
                         <UserInformation form={form} />
                         <AdditionalInfo form={form} />
-                    </div>
+                    </Box>
                     <form.FormButton />
                 </form>
             </form.AppForm>
-        </div>
+        </Box>
     )
 }
