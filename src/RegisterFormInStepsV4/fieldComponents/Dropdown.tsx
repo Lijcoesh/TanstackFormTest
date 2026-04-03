@@ -10,7 +10,7 @@ interface IProps {
 export default function Dropdown(props: IProps) {
     const { label, id } = props
 
-    const field = useFieldContext<string>()
+    const field = useFieldContext<NationalityType>()
 
     const nationalityOptions: NationalityType[] = [
         { id: 1, name: 'Netherlands', populationCount: 17000000 },
@@ -23,14 +23,16 @@ export default function Dropdown(props: IProps) {
         <FormControl sx={{ mb: 2 }} fullWidth>
             <InputLabel id={id}>{label}</InputLabel>
             <Select
-                labelId={id}
-                id={id}
-                value={field.state.value}
-                label={label}
-                onChange={(e) => field.handleChange(e.target.value)}
+                value={field.state.value.id}
+                onChange={(e) => {
+                    const selectedNationality = nationalityOptions.find(n => n.id === e.target.value);
+                    if (selectedNationality) {
+                        field.handleChange(selectedNationality);
+                    }
+                }}
             >
                 {nationalityOptions.map((option) => (
-                    <MenuItem key={option.id} value={option.name}>
+                    <MenuItem key={option.id} value={option.id}>
                         {option.name}
                     </MenuItem>
                 ))}
