@@ -10,7 +10,7 @@ export default function ListOfFeatures() {
                     <ListItem>- Using TanStack Form</ListItem>
                     <ListItem>- with seperate components for fields</ListItem>
                     <ListItem>- Using a reusable component for password fields</ListItem>
-                    <ListItem>- Using a reusable component for select fields</ListItem>
+                    <ListItem>- Seperated form into steps</ListItem>
                     <ListItem>- Seperate logic and UI into different components</ListItem>
                     <ListItem>- Using Material UI</ListItem>
                 </List>

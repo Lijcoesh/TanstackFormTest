@@ -33,7 +33,7 @@ export default function RegisterFormInStepsV2() {
                     <li>Using TanStack Form</li>
                     <li>with seperate components for fields</li>
                     <li>Using a reusable component for password fields</li>
-                    <li>Using a reusable component for select fields</li>
+                    <li>Seperated form into steps</li>
                 </ul>
                 <h4>Changes since last version:</h4>
                 <ul>
