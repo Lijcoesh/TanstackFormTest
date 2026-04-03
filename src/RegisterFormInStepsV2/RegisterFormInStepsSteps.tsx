@@ -8,7 +8,9 @@ interface IProps {
     currentStep: number
 }
 
-export function RegisterFormInStepsSteps({ currentStep }: IProps) {
+export function RegisterFormInStepsSteps(props: IProps) {
+    const { currentStep } = props
+
     const form = useAppForm({
         ...registerFormOpts,
         onSubmit: (values) => {

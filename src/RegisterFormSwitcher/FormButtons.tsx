@@ -9,12 +9,14 @@ const buttonStyle = {
     fontWeight: 600
 }
 
-interface FormButtonsProps {
+interface IProps {
     version: FormVersion
     setVersion: (version: FormVersion) => void
 }
 
-export default function FormButtons({ version, setVersion }: FormButtonsProps) {
+export default function FormButtons(props: IProps) {
+    const { version, setVersion } = props
+
     return (
         <>
             <button
