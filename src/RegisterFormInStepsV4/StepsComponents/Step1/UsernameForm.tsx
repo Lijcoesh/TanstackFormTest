@@ -1,7 +1,7 @@
 import { withForm } from "../../form/form"
 import { registerFormOpts } from "../../form/shared"
 
-{/* use form.AppField because it provides the context needed for the text input component */}
+{/* use form.AppField instead of form.AppForm because it provides the context needed for the text input component */}
 export const UsernameForm = withForm({
     ...registerFormOpts,
     render: ({ form }) => {
