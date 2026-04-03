@@ -13,10 +13,11 @@ export default function ListOfFeatures() {
                     <ListItem>- Seperated form into steps</ListItem>
                     <ListItem>- Seperate logic and UI into different components</ListItem>
                     <ListItem>- Using Material UI</ListItem>
+                    <ListItem>- Using Object in dropdown</ListItem>
                 </List>
                 <Typography variant="h6">Changes since last version:</Typography>
                 <List>
-                    <ListItem>- Use Objects in Dropdown</ListItem>
+                    <ListItem>- Added button to toggle inline errors</ListItem>
                 </List>
             </Box>
         </Box>
