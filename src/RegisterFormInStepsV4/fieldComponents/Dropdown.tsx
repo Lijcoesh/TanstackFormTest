@@ -23,6 +23,8 @@ export default function Dropdown(props: IProps) {
         <FormControl sx={{ mb: 2 }} fullWidth>
             <InputLabel id={id}>{label}</InputLabel>
             <Select
+                labelId={id}
+                id={id} 
                 value={field.state.value.id}
                 onChange={(e) => {
                     const selectedNationality = nationalityOptions.find(n => n.id === e.target.value);
