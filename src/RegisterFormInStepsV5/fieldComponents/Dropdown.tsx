@@ -1,6 +1,7 @@
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import { FormControl, InputLabel, MenuItem, Select, FormHelperText, Box } from '@mui/material'
 import { useFieldContext } from '../form/form-context'
 import type { NationalityType } from '../Types/NationalityType'
+import { useInlineErrors } from '../form/InlineErrorsContext'
 
 interface IProps {
     label: string
@@ -9,8 +10,10 @@ interface IProps {
 
 export default function Dropdown(props: IProps) {
     const { label, id } = props
+    const showInlineErrors = useInlineErrors()
 
     const field = useFieldContext<NationalityType>()
+    const hasErrors = field.state.meta.errors && field.state.meta.errors.length > 0
 
     const nationalityOptions: NationalityType[] = [
         { id: 1, name: 'Netherlands', populationCount: 17000000 },
@@ -20,25 +23,30 @@ export default function Dropdown(props: IProps) {
     ];
 
     return (
-        <FormControl sx={{ mb: 2 }} fullWidth>
-            <InputLabel id={id}>{label}</InputLabel>
-            <Select
-                labelId={id}
-                id={id} 
-                value={field.state.value.id}
-                onChange={(e) => {
-                    const selectedNationality = nationalityOptions.find(n => n.id === e.target.value);
-                    if (selectedNationality) {
-                        field.handleChange(selectedNationality);
-                    }
-                }}
-            >
-                {nationalityOptions.map((option) => (
-                    <MenuItem key={option.id} value={option.id}>
-                        {option.name}
-                    </MenuItem>
-                ))}
-            </Select>
-        </FormControl>
+        <Box>
+            <FormControl sx={{ mb: showInlineErrors && hasErrors ? 0.5 : 2 }} fullWidth error={showInlineErrors && hasErrors}>
+                <InputLabel id={id}>{label}</InputLabel>
+                <Select
+                    labelId={id}
+                    id={id} 
+                    value={field.state.value.id}
+                    onChange={(e) => {
+                        const selectedNationality = nationalityOptions.find(n => n.id === e.target.value);
+                        if (selectedNationality) {
+                            field.handleChange(selectedNationality);
+                        }
+                    }}
+                >
+                    {nationalityOptions.map((option) => (
+                        <MenuItem key={option.id} value={option.id}>
+                            {option.name}
+                        </MenuItem>
+                    ))}
+                </Select>
+                {showInlineErrors && hasErrors && (
+                    <FormHelperText>{field.state.meta.errors[0]}</FormHelperText>
+                )}
+            </FormControl>
+        </Box>
     )
 }

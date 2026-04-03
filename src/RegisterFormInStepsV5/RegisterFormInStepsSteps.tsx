@@ -4,13 +4,15 @@ import { registerFormOpts } from "./form/shared"
 import { Step1 } from "./StepsComponents/Step1/Step1"
 import { Step2 } from "./StepsComponents/Step2/Step2"
 import { Step3 } from "./StepsComponents/Step3/Step3"
+import { InlineErrorsContext } from "./form/InlineErrorsContext"
 
 interface IProps {
     currentStep: number
+    showInlineErrors: boolean
 }
 
 export function RegisterFormInStepsSteps(props: IProps) {
-    const { currentStep } = props
+    const { currentStep, showInlineErrors } = props
 
     const form = useAppForm({
         ...registerFormOpts,
@@ -22,27 +24,29 @@ export function RegisterFormInStepsSteps(props: IProps) {
     })
 
     return (
-        <form.AppForm>
-            <form className="register-form"
-                onSubmit={(e) => {
-                    e.preventDefault()
-                    form.handleSubmit()
-                }}
-            >
-                <form.ErrorSummary />
-                <Box>
-                    <Box sx={{ display: currentStep === 0 ? 'block' : 'none' }}>
-                        <Step1 form={form} />
+        <InlineErrorsContext.Provider value={showInlineErrors}>
+            <form.AppForm>
+                <form className="register-form"
+                    onSubmit={(e) => {
+                        e.preventDefault()
+                        form.handleSubmit()
+                    }}
+                >
+                    {!showInlineErrors && <form.ErrorSummary />}
+                    <Box>
+                        <Box sx={{ display: currentStep === 0 ? 'block' : 'none' }}>
+                            <Step1 form={form} />
+                        </Box>
+                        <Box sx={{ display: currentStep === 1 ? 'block' : 'none' }}>
+                            <Step2 form={form} />
+                        </Box>
+                        <Box sx={{ display: currentStep === 2 ? 'block' : 'none' }}>
+                            <Step3 form={form} />
+                        </Box>
                     </Box>
-                    <Box sx={{ display: currentStep === 1 ? 'block' : 'none' }}>
-                        <Step2 form={form} />
-                    </Box>
-                    <Box sx={{ display: currentStep === 2 ? 'block' : 'none' }}>
-                        <Step3 form={form} />
-                    </Box>
-                </Box>
-                <form.SubmitButton />
-            </form>
-        </form.AppForm>
+                    <form.SubmitButton />
+                </form>
+            </form.AppForm>
+        </InlineErrorsContext.Provider>
     )
 }
