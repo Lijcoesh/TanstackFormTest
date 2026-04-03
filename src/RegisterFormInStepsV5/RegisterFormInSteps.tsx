@@ -1,7 +1,8 @@
 import { useState } from "react";
 import StepButton from "./formComponents/StepButton";
+import InlineErrorsToggleButton from "./formComponents/InlineErrorsToggleButton";
 import { RegisterFormInStepsSteps } from "./RegisterFormInStepsSteps";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import ListOfFeatures from "./ListOfFeatures";
 
 export default function RegisterFormInStepsV5() {
@@ -29,24 +30,22 @@ export default function RegisterFormInStepsV5() {
     return(
         <Box sx={{ display: 'flex', gap: 4, maxWidth: 1200, margin: '0 auto' }}>
             <Box sx={{ flex: 1, backgroundColor: '#f5f5f5', padding: 3, borderRadius: 2 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4, gap: 2 }}>
                     <Typography 
                         variant="h1" 
                         sx={{
                             fontWeight: 700,
                             letterSpacing: 0.5,
                             color: 'primary.main',
+                            flex: 1,
                         }}
                     >
                         Register
                     </Typography>
-                    <Button 
-                        variant="outlined" 
-                        onClick={() => setShowInlineErrors(!showInlineErrors)}
-                        sx={{ textTransform: 'none', fontWeight: 600 }}
-                    >
-                        {showInlineErrors ? 'Hide Inline Errors' : 'Show Inline Errors'}
-                    </Button>
+                    <InlineErrorsToggleButton 
+                        showInlineErrors={showInlineErrors}
+                        onToggle={() => setShowInlineErrors(!showInlineErrors)}
+                    />
                 </Box>
                 <RegisterFormInStepsSteps currentStep={currentStep} showInlineErrors={showInlineErrors} />
                 <Box sx={{ display: 'flex', justifyContent: 'space-between'}}>
