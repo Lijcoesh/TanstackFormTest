@@ -15,7 +15,7 @@ export function RegisterFormInStepsSteps({ currentStep }: IProps) {
         onSubmit: (values) => {
             console.log(values, "form submitted")
             console.log(values.value.nationality.populationCount, "population count")
-            alert(`Population Count: ${values.value.nationality.populationCount}`)
+            alert(`Population Count of ${values.value.nationality.name}: ${values.value.nationality.populationCount}`)
         }
     })
 
