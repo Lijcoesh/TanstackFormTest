@@ -13,7 +13,7 @@ import RegisterFormInStepsV4 from "../RegisterFormInStepsV4/RegisterFormInSteps"
 import RegisterFormInStepsV5 from "../RegisterFormInStepsV5/RegisterFormInSteps";
 
 export default function RegisterFormSwitcher() {
-    const [version, setVersion] = useState<FormVersion>("InStepsV4");
+    const [version, setVersion] = useState<FormVersion>("InStepsV5");
 
     return (
     <div>
